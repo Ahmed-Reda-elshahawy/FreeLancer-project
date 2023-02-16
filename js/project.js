@@ -40,7 +40,7 @@ function bgChange() {
         imgSlider = setInterval(() => {
             let randomImg = Math.floor(Math.random() * arrOfImges.length);
             landPage.style.backgroundImage = `url("../images/${arrOfImges[randomImg]}")`;
-        }, 1000)
+        }, 11000)
     }
     else {
         clearInterval(imgSlider);
@@ -93,22 +93,21 @@ options.forEach(span => {
 // Our skills animation //
 let ourSkills = document.querySelector(".our-skills");
 
-window.onscroll = function () {
-    let ofstop = ourSkills.offsetTop;
-    let ofsh = ourSkills.offsetHeight;
-    let winh = this.innerHeight;
-    let pageYO = this.pageYOffset;
-    if (pageYO > (ofstop + ofsh - winh)) {
-        let skills = document.querySelectorAll(".skills .skill-box .skill-progress span");
+document.onscroll = function () {
+    // let ofstop = ourSkills.offsetTop;
+    // let ofsh = ourSkills.offsetHeight;
+    // let winh = this.innerHeight;
+    // let pageYO = this.pageYOffset;
+    if (window.scrollY > 700) {
+        let skills = document.querySelectorAll(".our-skills .skills .skill-box .skill-progress span");
         skills.forEach((skill) => {
             skill.style.width = skill.dataset.width;
-        })
+        });
     }
-}
+};
 
 
 // our gallery add overlay and popub //
-
 let ourImgs = document.querySelectorAll(".img-div img");
 
 ourImgs.forEach((img) => {
@@ -150,7 +149,7 @@ document.addEventListener("click", (e) => {
 
 // Controls Bullets  and links active class//
 // ====================================== //
-let bullets = document.querySelectorAll(".Random-background .bullets .bullet");
+let bullets = document.querySelectorAll(".bullets .bullet");
 let links = document.querySelectorAll(".landing .links li a");
 
 // handel active class //
@@ -270,7 +269,4 @@ btnUp.onclick = function () {
         top: 0,
         behavior: "smooth"
     });
-};
-
-
-// light & dark mode //
+}

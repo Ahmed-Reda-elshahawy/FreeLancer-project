@@ -911,7 +911,7 @@ a {
 
 /* ======================== bullets section ======================== */
 .contact-us {
-    background-image: url(/images/contact.jfif);
+    background-image: url(../images/contact.jfif);
     min-height: 500px;
     background-size: cover;
     position: relative;
